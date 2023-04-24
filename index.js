@@ -29,6 +29,14 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 })
 
+//add function to Add new task button
+addBtn.addEventListener("click", () => {
+    form.style.display = "flex";
+    addBtn.style.display = "none";
+})
+
+//when Add new task form available
+//add function to Confirm button
 confirmBtn.addEventListener("click", () => {
     //create <li>task</li> elem
     const task = document.createElement("li");
@@ -93,6 +101,16 @@ confirmBtn.addEventListener("click", () => {
 
     //clear input field
     title.value = "";
+    //close form
+    form.style.display = "none";
+    //make Add new task button available again
+    addBtn.style.display = "block";
+})
+
+//add function to Cancel button
+cancelBtn.addEventListener("click", () => {
+    form.style.display = "none";
+    addBtn.style.display = "block";
 })
     
 
