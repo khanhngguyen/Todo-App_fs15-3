@@ -1,0 +1,20 @@
+{
+  "name": "fs15_3-todo-app",
+  "version": "1.0.0",
+  "description": "Create a simple application to let users add/remove/edit tasks. Tasks should have: title, deadline, status ![task-list](task_list.png) ![add-task](add_task.png) ![edit-task](edit_task.png)",
+  "main": "index.js",
+  "scripts": {
+    "compile": "sass src/styles/style.scss:style.css",
+    "compile:watch": "sass --watch src/styles/style.scss:style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhngguyen/fs15_3-todo-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanhngguyen/fs15_3-todo-app/issues"
+  },
+  "homepage": "https://github.com/khanhngguyen/fs15_3-todo-app#readme"
+}
