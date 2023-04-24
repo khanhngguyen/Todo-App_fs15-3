@@ -6,33 +6,23 @@ const addBtn = document.querySelector("#add-btn");
 const cancelBtn = document.querySelector("#cancel-btn");
 const confirmBtn = document.querySelector("#confirm-btn");
 const taskList = document.querySelector("#task-list");
-
-let tasks = [
-    {
-        id: 0,
-        title: "Do assignment 1",
-        status: "done"
-    }, 
-    {
-        id: 1,
-        title: "Do assignment 2",
-        status: "in progress"
-    },
-    {
-        id: 2,
-        title: "Do assignment 3",
-        status: "not started"
-    }
-]
+const taskCount = document.querySelector("#task-count");
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 })
 
+//set today as default deadline date
+date.valueAsDate = new Date();
+
+//set initial count function
+taskCount.innerText = `You have 0 tasks in total`;
+
 //add function to Add new task button
 addBtn.addEventListener("click", () => {
     form.style.display = "flex";
     addBtn.style.display = "none";
+    title.focus();
 })
 
 //when Add new task form available
@@ -51,6 +41,7 @@ confirmBtn.addEventListener("click", () => {
     }
     taskInput.value = title.value;
     taskInput.setAttribute("readonly", "readonly");
+    taskInput.classList.add("task-title");
 
     const taskDate = document.createElement("input");
     taskDate.type = "date";
@@ -62,9 +53,11 @@ confirmBtn.addEventListener("click", () => {
 
     const editBtn = document.createElement("button");
     editBtn.innerText = "Edit";
+    editBtn.classList.add("edit");
 
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "Delete";
+    deleteBtn.classList.add("delete");
 
     //append all elem into task elem
     task.appendChild(taskInput);
@@ -85,20 +78,29 @@ confirmBtn.addEventListener("click", () => {
             taskStatus.style.display = "none";
             task.insertBefore(status, task.children[2]);
             editBtn.innerText = "Save";
+            editBtn.classList.add("save");
         } else {
             taskInput.setAttribute("readonly", "readonly");
             taskStatus.innerText = `Status: ${status.value}`;
             taskStatus.style.display = "block";
             task.removeChild(status);
-            editBtn.innerText = "Edit";
+            editBtn.innerText = "Edit"
+            editBtn.classList.remove("save");
         }
     })
+
+    //add count function, count every time new task is created & update 
+    count = document.querySelectorAll("li").length;
+    taskCount.innerText = `You have ${count} tasks in total`;
 
     //add delete function
     deleteBtn.addEventListener("click", () => {
         taskList.removeChild(task);
+        //when 1 task is deleted, re-count & update
+        count = document.querySelectorAll("li").length;
+        taskCount.innerText = `You have ${count} tasks in total`;
     })
-
+    
     //clear input field
     title.value = "";
     //close form
@@ -112,5 +114,5 @@ cancelBtn.addEventListener("click", () => {
     form.style.display = "none";
     addBtn.style.display = "block";
 })
-    
+
 

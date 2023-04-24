@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-main button#add-btn, main form#task-form .button__wrapper button {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+main button#add-btn, main form#task-form .button__wrapper button, ul#task-list li button {
   display: inline-block;
   background: #000;
   color: #fff;
@@ -13,6 +13,65 @@ main button#add-btn, main form#task-form .button__wrapper button {
   font-family: inherit;
 }
 
+ul#task-list {
+  list-style-type: none;
+}
+ul#task-list li {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+}
+ul#task-list li input {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-family: inherit;
+  display: block;
+  padding: 5px;
+  margin: 0;
+}
+ul#task-list li .task-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+ul#task-list li select {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-family: inherit;
+  display: block;
+  padding: 5px;
+  margin: 0;
+}
+ul#task-list li button {
+  padding: 5px 1rem;
+  margin: 0.6rem 0.4rem 1rem 0;
+}
+ul#task-list li .edit {
+  background-color: transparent;
+  border: 1.5px solid black;
+  color: black;
+}
+ul#task-list li .edit:hover {
+  background-color: black;
+  color: white;
+}
+ul#task-list li .delete {
+  background-color: transparent;
+  border: 1.5px solid black;
+  color: black;
+}
+ul#task-list li .delete:hover {
+  background-color: red;
+  color: white;
+  border-color: red;
+}
+ul#task-list li .save {
+  background-color: black;
+  color: white;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,13 +83,15 @@ body {
 }
 
 .container {
-  max-width: 31rem;
+  max-width: 35rem;
   margin: 1.8rem auto;
   overflow: auto;
   min-height: 300px;
   border: 1.5px solid steelblue;
   padding: 1.8rem;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 header h1 {
@@ -83,6 +144,9 @@ main form#task-form .button__wrapper button#confirm-btn {
 main .task-container h3 {
   text-align: center;
   margin: 5px;
+}
+main .task-container p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -15,9 +15,9 @@
         <main>
             <button id="add-btn">Add new task +</button>
             <form id="task-form">
-                <label for="title">Add new task</label>
+                <label for="title">Add new task:</label>
                 <input id="title" type="text" placeholder="Type you task title here">
-                <label for="date">Choose date:</label>
+                <label for="date">Choose deadline:</label>
                 <input id="date" type="date">
                 <label for="status">Choose status:</label>
                 <select id="status" name="status">
@@ -33,12 +33,14 @@
             <div class="task-container">
                 <h3>Task list</h3>
                 <ul id="task-list">
-                    <li>
-                        <input type="text" value="my task" readonly>
-                        <button>Edit</button>
-                        <button>Delete</button>
-                    </li>
+                    <!-- <li>
+                        <input type="text" value="my task" class="task-title"readonly>
+                        <input type="date" class="task-date" readonly>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </li> -->
                 </ul>
+                <p id="task-count"></p>
             </div>
         </main>
     </div>

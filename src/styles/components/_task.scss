@@ -1,0 +1,62 @@
+@use "./button";
+
+
+ul#task-list {
+    list-style-type: none;
+    li {
+        background: #f4f4f4;
+        margin: 5px;
+        padding: 0.6rem 1.25rem;
+        cursor: pointer;
+        input {
+            border: none;
+            background-color: transparent;
+            font-size: 1rem;
+            font-family: inherit;
+            display: block;
+            padding: 5px;
+            margin: 0;
+        }
+        .task-title {
+            font-weight: 600;
+            font-size: 1.2rem
+        }
+        select {
+            border: none;
+            background-color: transparent;
+            font-size: 1rem;
+            font-family: inherit;
+            display: block;
+            padding: 5px;
+            margin: 0;
+        }
+        button {
+            @extend %button;
+            padding: 5px 1rem;
+            margin: 0.6rem 0.4rem 1rem 0;
+        }
+        .edit {
+            background-color: transparent;
+            border: 1.5px solid black;
+            color: black;
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+        .delete {
+            background-color: transparent;
+            border: 1.5px solid black;
+            color: black;
+            &:hover {
+                background-color: red;
+                color: white;
+                border-color: red;
+            }
+        }
+        .save {
+            background-color: black;
+            color: white;
+        }
+    }
+}
