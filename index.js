@@ -69,6 +69,18 @@ confirmBtn.addEventListener("click", () => {
     //append task elem into taskList
     taskList.appendChild(task);
 
+    //create new <select> elem with options inside each task
+    const newStatus = document.createElement("select");
+    const option1 = document.createElement("option");
+    option1.text = "Not started";
+    const option2 = document.createElement("option");
+    option2.text = "In progress";
+    const option3 = document.createElement("option");
+    option3.text = "Done";
+    newStatus.add(option1);
+    newStatus.add(option2);
+    newStatus.add(option3);
+
     //add edit function 
     editBtn.addEventListener("click", () => {
         if (editBtn.innerText == "Edit") {
@@ -76,14 +88,14 @@ confirmBtn.addEventListener("click", () => {
             taskDate.removeAttribute("readonly");
             taskInput.focus();
             taskStatus.style.display = "none";
-            task.insertBefore(status, task.children[2]);
+            task.insertBefore(newStatus, task.children[2]);
             editBtn.innerText = "Save";
             editBtn.classList.add("save");
         } else {
             taskInput.setAttribute("readonly", "readonly");
-            taskStatus.innerText = `Status: ${status.value}`;
+            taskStatus.innerText = `Status: ${newStatus.value}`;
             taskStatus.style.display = "block";
-            task.removeChild(status);
+            task.removeChild(newStatus);
             editBtn.innerText = "Edit"
             editBtn.classList.remove("save");
         }
