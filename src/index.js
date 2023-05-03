@@ -30,7 +30,6 @@ addBtn.addEventListener("click", () => {
 confirmBtn.addEventListener("click", () => {
     //create <li>task</li> elem
     const task = document.createElement("li");
-
     //inside each task: Title input elem, Date input elem, Status elem, Edit button, Delete button
     const taskInput = document.createElement("input");
     taskInput.type = "text";
