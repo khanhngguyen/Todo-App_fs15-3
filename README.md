@@ -15,7 +15,7 @@ Tasks should have: title, deadline, status
 
 ## Result
 [live demo available here](https://khanhngguyen.github.io/fs15_3-todo-app/)
-![demo1](./src/styles/demo%20pictures/demo1.png)
+![demo1](/src/styles/demo%20pictures/)
 ![demo2](./src/styles/demo%20pictures/demo2.png)
 ![demo3](./src/styles/demo%20pictures/demo3.png)
 ![demo4](./src/styles/demo%20pictures/demo4.png)
